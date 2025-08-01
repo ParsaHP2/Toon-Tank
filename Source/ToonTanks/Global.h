@@ -16,5 +16,5 @@ class TOONTANKS_API UGlobal : public UGameInstance
 	
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "PlayerState")
-    int32 bIsPlayerHit = false;
+    bool bIsPlayerHit = false;
 };
