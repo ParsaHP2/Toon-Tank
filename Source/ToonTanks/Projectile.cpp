@@ -66,10 +66,11 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* otherActor, UPrimi
 		TankRef->ParryCounter++;
 	    isImmune = true;  
 		Global->bIsPlayerHit = false;
-		UE_LOG(LogTemp, Warning, TEXT("PARRIED!! isHit is: %s"), Global->bIsPlayerHit ? TEXT("true") : TEXT("false"));
+		//UE_LOG(LogTemp, Warning, TEXT("PARRIED!! isHit is: %s"), Global->bIsPlayerHit ? TEXT("true") : TEXT("false"));
     } else if (TankRef && !TankRef->isParrying && Global){
-		Global->bIsPlayerHit = true;
-		UE_LOG(LogTemp, Warning, TEXT("NOT PARRIED!! isHit is: %s"), Global->bIsPlayerHit ? TEXT("true") : TEXT("false"));
+		Global->bIsPlayerHit++;
+		//Global->previousPlayerHit = true;
+		UE_LOG(LogTemp, Warning, TEXT("NOT PARRIED!! isHit is: %d"), Global->bIsPlayerHit);
 	} 
 	
 
@@ -84,6 +85,7 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* otherActor, UPrimi
 
 		if(HitCameraShakeClass)
 			GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(HitCameraShakeClass);
+
 	} 
 	Destroy();
 }

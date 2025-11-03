@@ -47,7 +47,6 @@ void UHealthComponent::DamageTaken(AActor* DamagedActor, float Damage, const UDa
 
 	//if(Global && Global->bIsPlayerHit){
 		Health -= Damage;
-		//Global->bIsPlayerHit = true;
 		//UE_LOG(LogTemp, Warning, TEXT("Health updated!! isHit is: %s"), Global->bIsPlayerHit ? TEXT("true") : TEXT("false"));
 	//}
 	

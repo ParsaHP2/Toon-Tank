@@ -29,7 +29,7 @@ void AToonTankGameMode::ActorDied(AActor *DeadActor){
 void AToonTankGameMode::BeginPlay(){
     Super::BeginPlay();
     HandleGameStart();
-    HealthUI(isHit);
+    HealthUI();
 }
 
 void AToonTankGameMode::HandleGameStart(){
